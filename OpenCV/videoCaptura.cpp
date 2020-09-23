@@ -28,6 +28,8 @@ int main(int, char**)
     //--- GRAB AND WRITE LOOP
     cout << "Start grabbing" << endl
         << "Press any key to terminate" << endl;
+
+    Mat saveVideo;
     for (;;)
     {
         // wait for a new frame from camera and store it into 'frame'
@@ -39,7 +41,8 @@ int main(int, char**)
         }
         // show live and wait for a key with timeout long enough to show images
         imshow("Live", frame);
-        if (waitKey(5) >= 0)
+        //write(saveVideo);
+	if (waitKey(5) >= 0)
             break;
     }
     // the camera will be deinitialized automatically in VideoCapture destructor
